@@ -10,6 +10,9 @@ class OsmdContainer extends Component {
       () => {
         openSheetMusicDisplay.zoom = 0.8;
         openSheetMusicDisplay.render();
+        window.addEventListener("resize", () => {
+          openSheetMusicDisplay.render();
+        });
       },
       (err) => console.err(err)
     )
@@ -21,15 +24,7 @@ class OsmdContainer extends Component {
 
   render() {
     return (
-      <div>
-        <div id="mus"></div>
-        <h4>Pros</h4>
-        <ul>
-          <li>Flows with page resize.  (For now resize window and then refresh.  Will make auto-refresh if we go this way.)</li>
-          <li>Future version should support tablature.</li>
-        </ul>
-
-      </div>
+      <div id="mus"></div>
     );
   }
 }
