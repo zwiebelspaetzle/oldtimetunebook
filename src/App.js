@@ -28,9 +28,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+<<<<<<< HEAD
         <MySideNav />
 
         <OsmdContainer />
+=======
+        <OsmdContainer tune="Cherokee_Shuffle"/>
+>>>>>>> master
       </div>
     );
   }
