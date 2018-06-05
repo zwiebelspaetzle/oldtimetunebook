@@ -5,7 +5,7 @@ class OsmdContainer extends Component {
   componentDidMount() {
     let openSheetMusicDisplay = new OpenSheetMusicDisplay("mus", false, "canvas");
     openSheetMusicDisplay
-    .load("library/Golden_Slippers.musicxml")
+    .load("library/"+this.props.tune+".musicxml")
     .then(
       () => {
         openSheetMusicDisplay.zoom = 0.8;
