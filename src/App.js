@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { SideNav, Chevron, Icon } from 'react-side-nav';
-import '../node_modules/react-side-nav/dist/themes.css';
 
 import OsmdContainer from "./components/OsmdContainer";
 import './App.css';
@@ -16,37 +14,12 @@ const tunes = [
   'Big Sciota'
 ]
 
-const menuItems = [{
-    id: 'tunes',
-    label: 'Tunes',
-    icon: 'fas fa-book',
-    items: []
-  }
-];
-
-tunes.forEach((tune) => {
-  let tuneFile = tune.replace(/ /g, '_').replace(/'/g, '');
-  menuItems[0].items.push({
-    id: tuneFile,
-    label: tune,
-    icon: 'fas fa-music',
-    link: '/tunes/'+tuneFile,
-  });
-})
-
-const NavLink = props => (<Link to={props.to} {...props}><i className={`fa ${props.icon}`} />{props.label}</Link>);
-
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
-          <SideNav
-            items={menuItems}
-            linkComponent={NavLink}
-            chevronComponent={Chevron}
-            iconComponent={Icon}
-          />
+          <SideNav />
           <Route exact path="/" component={Home}/>
           <Route path="/tunes/:tunefile" component={TuneContainer}/>
         </div>
@@ -61,17 +34,22 @@ const TuneContainer = ({match}) => {
   <OsmdContainer tune={match.params.tunefile}/>
 )}
 
-const Home = () => {
+const SideNav = () => {
   const tuneList = tunes.map((tune, key) => {
     let tuneFile = tune.replace(/ /g, '_').replace(/'/g, '');
-    return <li key={key}><Link to={"/tunes/"+tuneFile}>{tune}</Link></li>
+    return <Link key={key} to={"/tunes/"+tuneFile}><li>{tune}</li></Link>
   })
   return (
-    <ul>
-      <li><Link to="/">Home</Link></li>
-      { tuneList }
-    </ul>
+    <div className="sideNav">
+        <Link to="/"><li>Home</li></Link>
+        { tuneList }
+    </div>
   )
 }
+
+const Home = () => (
+  <div></div>
+)
+
 
 export default App;
