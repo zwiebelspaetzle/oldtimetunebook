@@ -22,9 +22,16 @@ class OsmdContainer extends Component {
     );
   }
 
+  // static getDerivedStateFromProps(props, state) {
+  //   console.log(props, state);
+  // }
+
   render() {
     return (
-      <div id="mus"></div>
+      <div>
+        <h1>{this.props.tune}</h1>
+        <div id="mus"></div>
+      </div>
     );
   }
 }
