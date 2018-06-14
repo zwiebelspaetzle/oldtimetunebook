@@ -1,6 +1,9 @@
 .sideNav {
     background-color: #ddd;
-    width: 200px;
+    flex-basis: 11rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: 0.5s;
 }
 
 .sideNav li {
@@ -17,5 +20,27 @@
 .sideNav a {
     color: #000;
     font-size: 0.8rem;
+    opacity: 1;
     text-decoration: none;
+    transition: 0.5s;
+}
+
+.sideNav .toggleButton {
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.sideNav.collapsed {
+    flex-basis: 10px;
+    transition: 0.5s;
+}
+
+.sideNav.collapsed a {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.sideNav.collapsed .toggleButton {
+    transform: rotate(-180deg);
+    transition: 0.5s;
 }
