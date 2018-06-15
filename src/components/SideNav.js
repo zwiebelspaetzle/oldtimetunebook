@@ -4,16 +4,16 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft'
 
 const tunes = [
-  'Golden Slippers',
+  'Big Sciota',
   'Cherokee Shuffle',
   'Coleman\'s March',
+  'Golden Slippers',
   'Sourgrass and Granite',
   'Whiskey Before Breakfast',
-  'Big Sciota'
 ]
 
 class SideNav extends Component {
-  state = {collapsed: false}
+  state = {collapsed: true}
 
   handleToggleClick = () => {
     this.setState({collapsed: !this.state.collapsed})
@@ -28,7 +28,6 @@ class SideNav extends Component {
     return (
       <div className={sideNavClass}>
         <div className="menu">
-            <Link to="/"><li>Home</li></Link>
             { tuneList }
         </div>
         <div className="toggleButtonContainer">

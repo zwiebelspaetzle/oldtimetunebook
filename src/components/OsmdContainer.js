@@ -2,46 +2,43 @@ import React, { Component } from 'react';
 import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
 
 class OsmdContainer extends Component {
-
-  state = {
-    tune: this.props.tune
-  };
+  opensheetmusicdisplay = null
 
   componentDidMount() {
     this.loadTune();
   }
 
+  componentDidUpdate() {
+    this.openSheetMusicDisplay.reset()
+    this.loadTune()
+  }
+
+  createOsmd = () => {
+    if (!this.openSheetMusicDisplay) {
+      this.openSheetMusicDisplay = new OpenSheetMusicDisplay("mus", false, "canvas");
+    }
+  }
+
   loadTune() {
-    let openSheetMusicDisplay = new OpenSheetMusicDisplay("mus", false, "canvas");
-    openSheetMusicDisplay
-    .load("../library/"+this.state.tune+".musicxml")
+    this.createOsmd()
+    this.openSheetMusicDisplay
+    .load("../library/"+this.props.tune+".musicxml")
     .then(
       () => {
-        openSheetMusicDisplay.zoom = 0.8;
-        openSheetMusicDisplay.render();
+        this.openSheetMusicDisplay.zoom = 0.8;
+        this.openSheetMusicDisplay.render();
         window.addEventListener("resize", () => {
-          openSheetMusicDisplay.render();
+          this.openSheetMusicDisplay.render();
         });
       },
       (err) => console.err(err)
     )
     .then(
-      () => console.log("Sheet music displayed."),
       (err) => console.err(err)
     );
   }
 
-  static getDerivedStateFromProps(props, state) {
-    if (props.tune !== state.tune) {
-      return {
-        tune: props.tune
-      };
-    }
-    return null;
-  }
-
   render() {
-    // this.loadTune();
     return (
       <div>
         <div id="mus"></div>
