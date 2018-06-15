@@ -1,16 +1,29 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import OsmdContainer from "./components/OsmdContainer";
+import OsmdContainer from './components/OsmdContainer'
+import SideNav from './components/SideNav'
+import './App.css'
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
-        <OsmdContainer tune="Cherokee_Shuffle"/>
-      </div>
-    );
+      <Router>
+        <div>
+          <SideNav />
+          <Route path='/tunes/:tunefile' component={TuneContainer} />
+        </div>
+      </Router>
+    )
   }
 }
 
-export default App;
+const TuneContainer = ({match}) => {
+  return (
+    <div>
+      <OsmdContainer tune={match.params.tunefile} />
+    </div>
+  )
+}
+
+export default App

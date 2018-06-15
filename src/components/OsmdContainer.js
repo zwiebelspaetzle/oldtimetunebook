@@ -2,29 +2,47 @@ import React, { Component } from 'react';
 import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
 
 class OsmdContainer extends Component {
+  opensheetmusicdisplay = null
+
   componentDidMount() {
-    let openSheetMusicDisplay = new OpenSheetMusicDisplay("mus", false, "canvas");
-    openSheetMusicDisplay
-    .load("library/"+this.props.tune+".musicxml")
+    this.loadTune();
+  }
+
+  componentDidUpdate() {
+    this.openSheetMusicDisplay.reset()
+    this.loadTune()
+  }
+
+  createOsmd = () => {
+    if (!this.openSheetMusicDisplay) {
+      this.openSheetMusicDisplay = new OpenSheetMusicDisplay("mus", false, "canvas");
+    }
+  }
+
+  loadTune() {
+    this.createOsmd()
+    this.openSheetMusicDisplay
+    .load("../library/"+this.props.tune+".musicxml")
     .then(
       () => {
-        openSheetMusicDisplay.zoom = 0.8;
-        openSheetMusicDisplay.render();
+        this.openSheetMusicDisplay.zoom = 0.8;
+        this.openSheetMusicDisplay.render();
         window.addEventListener("resize", () => {
-          openSheetMusicDisplay.render();
+          this.openSheetMusicDisplay.render();
         });
       },
       (err) => console.err(err)
     )
     .then(
-      () => console.log("Sheet music displayed."),
       (err) => console.err(err)
     );
   }
 
   render() {
     return (
-      <div id="mus"></div>
+      <div>
+        <div id="mus"></div>
+      </div>
     );
   }
 }
