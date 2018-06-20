@@ -23,8 +23,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "shipit-cli": "^4.1.1",
-    "shipit-deploy": "^4.1.1",
     "standard": "^11.0.1"
   }
 }
