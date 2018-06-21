@@ -13,7 +13,7 @@ const tunes = [
 ]
 
 class SideNav extends Component {
-  state = {collapsed: true}
+  state = {collapsed: false}
 
   handleToggleClick = () => {
     this.setState({collapsed: !this.state.collapsed})
@@ -28,7 +28,8 @@ class SideNav extends Component {
     return (
       <div className={sideNavClass}>
         <div className="menu">
-            { tuneList }
+          <Link to="/"><li>Home</li></Link>
+          { tuneList }
         </div>
         <div className="toggleButtonContainer">
           <span className="toggleButton" onClick={this.handleToggleClick}><FontAwesomeIcon icon={faChevronLeft} /></span>
