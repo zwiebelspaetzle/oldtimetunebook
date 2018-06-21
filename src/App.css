@@ -1,3 +1,14 @@
+.home {
+    padding: 2rem 0 0 16rem;
+}
+
+.home .leftPointer{
+    display: inline-block;
+    margin: 0px 6px 0px -38px;
+    position: relative;
+    top: 3px;
+}
+
 .sideNav {
     background-color: #dde;
     left: 0rem;
