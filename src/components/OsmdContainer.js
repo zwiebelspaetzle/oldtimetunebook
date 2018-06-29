@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
+import { tunesLib } from '../config.js';
 
 class OsmdContainer extends Component {
   opensheetmusicdisplay = null
@@ -22,7 +23,7 @@ class OsmdContainer extends Component {
   loadTune() {
     this.createOsmd()
     this.openSheetMusicDisplay
-    .load("../library/"+this.props.tune+".musicxml")
+    .load(tunesLib+this.props.tune+".musicxml")
     .then(
       () => {
         this.openSheetMusicDisplay.zoom = 0.8;
