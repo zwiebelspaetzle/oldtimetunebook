@@ -13,7 +13,14 @@ const tunes = [
 ]
 
 class SideNav extends Component {
-  state = {collapsed: false}
+  state = {collapsed: true}
+
+  componentDidMount () {
+    // show menu when loading to home page
+    if (window.location.href.indexOf('tunes') === -1) {
+      this.setState({collapsed: false})
+    }
+  }
 
   handleToggleClick = () => {
     this.setState({collapsed: !this.state.collapsed})
