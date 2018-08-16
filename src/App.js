@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft'
 
 import Home from './components/Home'
 import SideNav from './components/SideNav'
 import TuneContainer from './components/TuneContainer'
 import './App.css'
 
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft'
 
 class App extends Component {
   state = {sideNavCollapsed: true}

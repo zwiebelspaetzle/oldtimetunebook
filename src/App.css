@@ -11,12 +11,8 @@
 
 .sideNav {
     background-color: #dde;
-    /* left: 0rem; */
     overflow: hidden;
-    /* position: absolute; */
-    /* top: 0; */
     transition: 0.5s;
-    /* z-index: 100; */
     flex-basis: 10rem;
 }
 
@@ -50,12 +46,9 @@
 
 .sideNavToggleButtonContainer {
     background-color: #dde;
-    /* top: 0; */
-    /* left: 10rem; */
     height: 1.1rem;
     padding: 0.25rem 0.5rem;
     transition: 0.5s;
-    /* position: absolute; */
 }
 
 .sideNavToggleButton {

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-// import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-// import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft'
 
 const tunes = [
   'Big Sciota',
@@ -25,9 +23,6 @@ class SideNav extends Component {
             <Link to="/"><li>Home</li></Link>
             { tuneList }
           </div>
-          {/* <div className="toggleButtonContainer">
-            <span className="toggleButton" onClick={this.handleToggleClick}><FontAwesomeIcon icon={faChevronLeft} /></span>
-          </div> */}
         </div>
     )
   }
