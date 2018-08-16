@@ -2,17 +2,36 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Home from './components/Home'
-import OsmdContainer from './components/OsmdContainer'
 import SideNav from './components/SideNav'
 import TuneContainer from './components/TuneContainer'
 import './App.css'
 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft'
+
 class App extends Component {
+  state = {sideNavCollapsed: true}
+
+  componentDidMount () {
+    // show menu when loading to home page
+    if (window.location.href.indexOf('tunes') === -1) {
+      this.setState({sideNavCollapsed: false})
+    }
+  }
+
+  handleSideNavToggleClick = () => {
+    this.setState({sideNavCollapsed: !this.state.sideNavCollapsed})
+  }
+
   render () {
+    let sideNavToggleButtonClass = (this.state.sideNavCollapsed) ? 'sideNavToggleButton collapsed' : 'sideNavToggleButton';
     return (
       <Router>
-        <div>
-          <SideNav />
+        <div className="wrapper">
+          <SideNav collapsed={this.state.sideNavCollapsed}/>
+          <div className="sideNavToggleButtonContainer">
+            <span className={sideNavToggleButtonClass} onClick={this.handleSideNavToggleClick}><FontAwesomeIcon icon={faChevronLeft} /></span>
+          </div>
           <Route path='/' exact={true} component={Home} />
           <Route path='/tunes/:tunefile' component={TuneContainer} />
         </div>
@@ -20,13 +39,5 @@ class App extends Component {
     )
   }
 }
-
-// const TuneContainer = ({match}) => {
-//   return (
-//     <div>
-//       <OsmdContainer tune={match.params.tunefile} />
-//     </div>
-//   )
-// }
 
 export default App
