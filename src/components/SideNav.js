@@ -9,7 +9,10 @@ const tunes = [
   'Coleman\'s March',
   'Golden Slippers',
   'Sourgrass and Granite',
+  'Tennessee Waltz',
+  'Wabash Cannonball',
   'Whiskey Before Breakfast',
+  'Wildwood Flower',
 ]
 
 class SideNav extends Component {
