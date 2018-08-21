@@ -11,14 +11,15 @@
 
 .sideNav {
     background-color: #dde;
-    overflow: hidden;
+    left: 0rem;
+    position: absolute;
+    top: 0;
     transition: 0.5s;
-    flex-basis: 10rem;
+    z-index: 100;
 }
 
 .sideNav.collapsed {
-    /* left: -10rem; */
-    flex-basis: 0;
+    left: -10rem;
 }
 
 .sideNav li {
@@ -44,26 +45,21 @@
     width: 10rem;
 }
 
-.sideNavToggleButtonContainer {
+.sideNav .toggleButtonContainer {
     background-color: #dde;
-    height: 1.1rem;
+    top: 0;
+    left: 10rem;
     padding: 0.25rem 0.5rem;
     transition: 0.5s;
+    position: absolute;
 }
 
-.sideNavToggleButton {
+.sideNav .toggleButton {
     display: inline-block;
     transition: 0.5s;
 }
 
-.sideNavToggleButton.collapsed {
+.sideNav.collapsed .toggleButton {
+
     transform: rotate(-180deg);
-}
-
-.tuneContainer {
-    flex-grow: 1;
-}
-
-.wrapper {
-    display: flex;
 }
