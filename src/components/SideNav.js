@@ -6,8 +6,12 @@ import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft'
 const tunes = [
   'Big Sciota',
   'Cherokee Shuffle',
+  'Clinch Mountain Backstep',
   'Coleman\'s March',
   'Golden Slippers',
+  'Midnight on the Water',
+  'Old Grey Cat',
+  'Sailor\'s Hornpipe',
   'Sourgrass and Granite',
   'Tennessee Waltz',
   'Wabash Cannonball',
