@@ -11,6 +11,7 @@
 
 # tune library files
 /library
+/public/library
 
 # misc
 .DS_Store
