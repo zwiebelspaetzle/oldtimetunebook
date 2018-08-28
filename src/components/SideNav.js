@@ -9,7 +9,7 @@ const tunes = [
   'Clinch Mountain Backstep',
   'Coleman\'s March',
   'Golden Slippers',
-  'Midnight on the Water',
+  'Midnight On The Water',
   'Old Grey Cat',
   'Sailor\'s Hornpipe',
   'Sourgrass and Granite',
