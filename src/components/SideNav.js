@@ -11,6 +11,7 @@ const tunes = [
   'Golden Slippers',
   'Midnight On The Water',
   'Old Grey Cat',
+  'Ook Pik Waltz',
   'Sailor\'s Hornpipe',
   'Sourgrass and Granite',
   'Tennessee Waltz',
