@@ -2,6 +2,54 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft'
+import styled from 'styled-components'
+
+const Menu = styled.div`
+  width: 10rem;
+`;
+
+const StyledSideNav = styled.div`
+  background-color: #dde;
+  left: ${props => props.collapsed ? "-10rem" : "0rem"};
+  position: absolute;
+  top: 0;
+  transition: 0.5s;
+  z-index: 100;
+`
+
+const SideNavLi = styled.li`
+  border-bottom: 1px solid #aac;
+  list-style-type: none;
+  margin: 0;
+  padding: .75rem;
+
+  :hover {
+    background-color: #eef;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  color: #000;
+  font-size: 0.8rem;
+  opacity: 1;
+  text-decoration: none;
+  transition: 0.5s;
+`;
+
+const ToggleButton = styled.span`
+  display: inline-block;
+  transition: 0.5s;
+  transform: ${props => props.collapsed ? "rotate(-180deg)" : null};
+`;
+
+const ToggleButtonContainer = styled.div`
+  background-color: #dde;
+  top: 0;
+  left: 10rem;
+  padding: 0.25rem 0.5rem;
+  transition: 0.5s;
+  position: absolute;
+`;
 
 const tunes = [
   'Big Sciota',
@@ -37,19 +85,19 @@ class SideNav extends Component {
   render() {
     let tuneList = tunes.map((tune, key) => {
       let tuneFile = tune.replace(/ /g, '_').replace(/'/g, '');
-      return <Link key={key} to={"/tunes/"+tuneFile}><li>{tune}</li></Link>
+      return <StyledLink key={key} to={"/tunes/"+tuneFile}><SideNavLi>{tune}</SideNavLi></StyledLink>
     })
     let sideNavClass = (this.state.collapsed) ? 'sideNav collapsed' : 'sideNav';
     return (
-      <div className={sideNavClass}>
-        <div className="menu">
-          <Link to="/"><li>Home</li></Link>
+      <StyledSideNav collapsed={this.state.collapsed}>
+        <Menu>
+          <StyledLink to="/"><SideNavLi>Home</SideNavLi></StyledLink>
           { tuneList }
-        </div>
-        <div className="toggleButtonContainer">
-          <span className="toggleButton" onClick={this.handleToggleClick}><FontAwesomeIcon icon={faChevronLeft} /></span>
-        </div>
-      </div>
+        </Menu>
+        <ToggleButtonContainer onClick={this.handleToggleClick}>
+          <ToggleButton collapsed={this.state.collapsed}><FontAwesomeIcon icon={faChevronLeft} /></ToggleButton>
+        </ToggleButtonContainer>
+      </StyledSideNav>
     )
   }
 }

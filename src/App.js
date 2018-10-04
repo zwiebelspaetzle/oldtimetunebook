@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './components/Home'
 import OsmdContainer from './components/OsmdContainer'
 import SideNav from './components/SideNav'
-import './App.css'
 
 class App extends Component {
   render () {
