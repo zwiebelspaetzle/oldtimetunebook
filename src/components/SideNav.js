@@ -87,7 +87,6 @@ class SideNav extends Component {
       let tuneFile = tune.replace(/ /g, '_').replace(/'/g, '');
       return <StyledLink key={key} to={"/tunes/"+tuneFile}><SideNavLi>{tune}</SideNavLi></StyledLink>
     })
-    let sideNavClass = (this.state.collapsed) ? 'sideNav collapsed' : 'sideNav';
     return (
       <StyledSideNav collapsed={this.state.collapsed}>
         <Menu>
