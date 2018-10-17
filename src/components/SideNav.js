@@ -10,11 +10,8 @@ const Menu = styled.div`
 
 const StyledSideNav = styled.div`
   background-color: #dde;
-  left: ${props => props.collapsed ? "-10rem" : "0rem"};
-  position: absolute;
-  top: 0;
+  flex-basis: ${props => props.collapsed ? "0rem" : "10rem"};
   transition: 0.5s;
-  z-index: 100;
 `
 
 const SideNavLi = styled.li`

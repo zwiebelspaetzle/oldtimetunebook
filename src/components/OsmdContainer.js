@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
-import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
+import { OpenSheetMusicDisplay } from "opensheetmusicdisplay"
+import styled from 'styled-components'
+
 import { tunesLib } from '../config.js';
+
+const Container = styled.div`
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+`
 
 class OsmdContainer extends Component {
   opensheetmusicdisplay = null
@@ -41,9 +49,9 @@ class OsmdContainer extends Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <div id="mus"></div>
-      </div>
+      </Container>
     );
   }
 }
