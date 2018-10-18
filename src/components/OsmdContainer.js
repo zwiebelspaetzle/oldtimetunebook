@@ -37,6 +37,7 @@ class OsmdContainer extends Component {
         this.openSheetMusicDisplay.zoom = 0.8;
         this.openSheetMusicDisplay.render();
         window.addEventListener("resize", () => {
+          console.log('resize');
           this.openSheetMusicDisplay.render();
         });
       },
