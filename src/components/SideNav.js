@@ -46,6 +46,7 @@ const ToggleButtonContainer = styled.div`
   padding: 0.25rem 0.5rem;
   transition: 0.5s;
   position: absolute;
+  z-index: 999;
 `;
 
 const tunes = [

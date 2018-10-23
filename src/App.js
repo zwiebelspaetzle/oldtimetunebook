@@ -9,6 +9,12 @@ import SideNav from './components/SideNav'
 const Container = styled.div`
   display: flex;
 `
+const RightContainer = styled.div`
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: 95vw;
+`
 
 class App extends Component {
   render () {
@@ -16,8 +22,10 @@ class App extends Component {
       <Router>
         <Container>
           <SideNav />
-          <Route path='/' exact={true} component={Home} />
-          <Route path='/tunes/:tunefile' component={TuneContainer} />
+          <RightContainer>
+            <Route path='/' exact={true} component={Home} />
+            <Route path='/tunes/:tunefile' component={TuneContainer} />
+          </RightContainer>
         </Container>
       </Router>
     )
