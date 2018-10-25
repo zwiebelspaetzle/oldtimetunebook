@@ -4,6 +4,8 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft'
 import styled from 'styled-components'
 
+import ViewToggle from './ViewToggle'
+
 const Menu = styled.div`
   width: 10rem;
 `;
@@ -19,6 +21,7 @@ const StyledSideNav = styled.div`
 
 const SideNavLi = styled.li`
   border-bottom: 1px solid #aac;
+  font-size: 0.8rem;
   list-style-type: none;
   margin: 0;
   padding: .75rem;
@@ -30,7 +33,6 @@ const SideNavLi = styled.li`
 
 const StyledLink = styled(Link)`
   color: #000;
-  font-size: 0.8rem;
   opacity: 1;
   text-decoration: none;
   transition: 0.5s;
@@ -90,6 +92,7 @@ class SideNav extends Component {
     return (
       <StyledSideNav collapsed={this.state.collapsed}>
         <Menu>
+          <SideNavLi><ViewToggle /></SideNavLi>
           <StyledLink to="/"><SideNavLi>Home</SideNavLi></StyledLink>
           { tuneList }
         </Menu>

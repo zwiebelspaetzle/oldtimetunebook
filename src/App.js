@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './components/Home'
 import OsmdContainer from './components/OsmdContainer'
 import SideNav from './components/SideNav'
-import ViewToggle from './components/ViewToggle'
 
 class App extends Component {
   render () {
@@ -12,7 +11,6 @@ class App extends Component {
       <Router>
         <div>
           <SideNav />
-          <ViewToggle />
           <Route path='/' exact={true} component={Home} />
           <Route path='/tunes/:tunefile' component={TuneContainer} />
         </div>
