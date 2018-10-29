@@ -6,11 +6,20 @@ import OsmdContainer from './components/OsmdContainer'
 import SideNav from './components/SideNav'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = { fillScreen: true };
+  }
+
+  handleFillScreenChange = (checked) => {
+    this.setState({fillScreen: checked})
+  }
+
   render () {
     return (
       <Router>
         <div>
-          <SideNav />
+          <SideNav fillScreen={this.state.fillScreen} handleFillScreenChange={this.handleFillScreenChange} />
           <Route path='/' exact={true} component={Home} />
           <Route path='/tunes/:tunefile' component={TuneContainer} />
         </div>

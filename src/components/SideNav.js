@@ -92,7 +92,7 @@ class SideNav extends Component {
     return (
       <StyledSideNav collapsed={this.state.collapsed}>
         <Menu>
-          <SideNavLi><ViewToggle /></SideNavLi>
+          <SideNavLi><ViewToggle fillScreen={this.props.fillScreen} handleFillScreenChange={this.props.handleFillScreenChange}/></SideNavLi>
           <StyledLink to="/"><SideNavLi>Home</SideNavLi></StyledLink>
           { tuneList }
         </Menu>
