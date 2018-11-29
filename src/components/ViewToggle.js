@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faExpand from '@fortawesome/fontawesome-free-solid/faExpand'
+// import faFilePdf from '@fortawesome/fontawesome-free-solid/faFilePdf'
 import styled from 'styled-components'
 import Switch from 'react-switch'
 

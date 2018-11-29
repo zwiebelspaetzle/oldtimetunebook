@@ -8,7 +8,7 @@ import ViewToggle from './ViewToggle'
 
 const Menu = styled.div`
   width: 10rem;
-`;
+`
 
 const StyledSideNav = styled.div`
   background-color: #dde;
