@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import faExpand from '@fortawesome/fontawesome-free-solid/faExpand'
-// import faFilePdf from '@fortawesome/fontawesome-free-solid/faFilePdf'
+import faHome from '@fortawesome/fontawesome-free-solid/faHome'
+import { Link } from "react-router-dom";
 import styled from 'styled-components'
 import Switch from 'react-switch'
+
+import {checkedIcon, uncheckedIcon} from '../svg/switchIcons'
 
 const Container = styled.div`
   display: flex;
@@ -20,13 +22,15 @@ class ViewToggle extends Component {
   render () {
     return (
       <Container>
-        <FontAwesomeIcon icon={faExpand} color='#999' size='2x'/>
+        <Link to="/"><FontAwesomeIcon icon={faHome} color='#999' size='2x'/></Link>
         <Switch
-          onChange = {this.props.handleFillScreenChange}
-          checked  = {this.props.fillScreen}
-          id       = 'view-toggle'
-          onColor  = '#ccd'
-          offColor = '#ccd'
+          onChange      = {this.props.handleFillScreenChange}
+          checked       = {this.props.fillScreen}
+          checkedIcon   = {checkedIcon}
+          id            = 'view-toggle'
+          offColor      = '#ccd'
+          onColor       = '#ccd'
+          uncheckedIcon = {uncheckedIcon}
         />
       </Container>
     )
