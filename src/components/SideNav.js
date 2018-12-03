@@ -62,6 +62,7 @@ const tunes = [
   'Midnight On The Water',
   'Old Grey Cat',
   'Ook Pik Waltz',
+  'Ragtime Annie',
   'Sailor\'s Hornpipe',
   'Sourgrass and Granite',
   'Tennessee Waltz',
