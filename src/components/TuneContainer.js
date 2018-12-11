@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import OsmdContainer from './OsmdContainer'
-import { tunesLib } from './../config.js';
+import { tunesLib } from './../config.js'
 
 const PdfContainer = styled.embed`
   width: 100%;

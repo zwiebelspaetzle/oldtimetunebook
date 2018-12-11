@@ -4,6 +4,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft'
 import styled from 'styled-components'
 
+import tuneList from '../tuneList'
 import ViewToggle from './ViewToggle'
 
 const Menu = styled.div`
@@ -53,30 +54,12 @@ const ToggleButtonContainer = styled.div`
   position: absolute;
 `;
 
-const tunes = [
-  'Big Sciota',
-  'Cherokee Shuffle',
-  'Clinch Mountain Backstep',
-  'Coleman\'s March',
-  'Golden Slippers',
-  'Midnight On The Water',
-  'Old Grey Cat',
-  'Ook Pik Waltz',
-  'Ragtime Annie',
-  'Sailor\'s Hornpipe',
-  'Sourgrass and Granite',
-  'Tennessee Waltz',
-  'Wabash Cannonball',
-  'Whiskey Before Breakfast',
-  'Wildwood Flower',
-]
-
 class SideNav extends Component {
   state = {collapsed: true}
 
   componentDidMount () {
     // show menu when loading to home page
-    if (window.location.href.indexOf('tunes') === -1) {
+    if (window.location.href.indexOf('tuneList') === -1) {
       this.setState({collapsed: false})
     }
   }
@@ -86,7 +69,7 @@ class SideNav extends Component {
   }
 
   render() {
-    let tuneList = tunes.map((tune, key) => {
+    let tuneMenu = tuneList.map((tune, key) => {
       let tuneFile = tune.replace(/ /g, '_').replace(/'/g, '');
       return <StyledLink key={key} to={"/tunes/"+tuneFile}><SideNavLi>{tune}</SideNavLi></StyledLink>
     })
@@ -96,7 +79,7 @@ class SideNav extends Component {
           <SideNavLi>
             <ViewToggle fillScreen={this.props.fillScreen} handleFillScreenChange={this.props.handleFillScreenChange}/>
           </SideNavLi>
-          { tuneList }
+          { tuneMenu }
         </Menu>
         <ToggleButtonContainer onClick={this.handleToggleClick}>
           <ToggleButton collapsed={this.state.collapsed}><FontAwesomeIcon icon={faChevronLeft} /></ToggleButton>
