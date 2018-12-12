@@ -11,11 +11,11 @@ const PdfContainer = styled.embed`
 `
 
 class TuneContainer extends Component {
-  constructor() {
+  constructor () {
     super()
   }
 
-  render() {
+  render () {
     console.log(this.props.fillScreen)
     return (
       <div>
