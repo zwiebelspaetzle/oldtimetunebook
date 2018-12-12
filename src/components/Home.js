@@ -8,11 +8,11 @@ const LeftPointer = styled.div`
   margin: 0px 6px 0px -38px;
   position: relative;
   top: 3px;
-`;
+`
 
 const StyledHome = styled.div`
   padding: 2rem 0 0 16rem;
-`;
+`
 
 class Home extends Component {
   render () {

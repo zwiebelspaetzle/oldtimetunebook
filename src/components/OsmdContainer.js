@@ -3,10 +3,13 @@ import { OpenSheetMusicDisplay } from "opensheetmusicdisplay";
 import { tunesLib } from '../config.js';
 
 class OsmdContainer extends Component {
-  opensheetmusicdisplay = null
+  constructor () {
+    super()
+    this.opensheetmusicdisplay = null
+  }
 
   componentDidMount() {
-    this.loadTune();
+    this.loadTune()
   }
 
   componentDidUpdate() {
@@ -45,4 +48,4 @@ class OsmdContainer extends Component {
   }
 }
 
-export default OsmdContainer;
+export default OsmdContainer

@@ -18,4 +18,3 @@ const tuneList = [
 ]
 
 export default tuneList
-    

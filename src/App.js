@@ -8,7 +8,7 @@ import TuneContainer from './components/TuneContainer'
 class App extends Component {
   constructor() {
     super()
-    this.state = { fillScreen: true };
+    this.state = { fillScreen: true }
   }
 
   handleFillScreenChange = (checked) => {

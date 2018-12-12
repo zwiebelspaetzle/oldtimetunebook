@@ -26,6 +26,6 @@
     "deploy": "yarn build && ./deploy.sh"
   },
   "devDependencies": {
-    "standard": "^11.0.1"
+    "standard": "^12.0.1"
   }
 }
