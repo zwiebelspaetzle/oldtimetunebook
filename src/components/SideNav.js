@@ -55,7 +55,10 @@ const ToggleButtonContainer = styled.div`
 `;
 
 class SideNav extends Component {
-  state = {collapsed: true}
+  constructor () {
+    super()
+    this.state = {collapsed: true}
+  }
 
   componentDidMount () {
     // show menu when loading to home page
