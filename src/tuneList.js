@@ -10,6 +10,7 @@ const tuneList = [
   'Ook Pik Waltz',
   'Ragtime Annie',
   'Sailors Hornpipe',
+  'Squirrel Heads and Gravy',
   'Sourgrass and Granite',
   'Tennessee Waltz',
   'Wabash Cannonball',
