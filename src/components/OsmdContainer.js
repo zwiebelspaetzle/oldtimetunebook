@@ -16,7 +16,7 @@ class OsmdContainer extends Component {
 
   createOsmd = () => {
     if (!this.openSheetMusicDisplay) {
-      this.openSheetMusicDisplay = new OpenSheetMusicDisplay("mus", false, "canvas");
+      this.openSheetMusicDisplay = new OpenSheetMusicDisplay("mus")
     }
   }
 
@@ -26,11 +26,8 @@ class OsmdContainer extends Component {
     .load(tunesLib+this.props.tune+".musicxml")
     .then(
       () => {
-        this.openSheetMusicDisplay.zoom = 0.8;
-        this.openSheetMusicDisplay.render();
-        window.addEventListener("resize", () => {
-          this.openSheetMusicDisplay.render();
-        });
+        this.openSheetMusicDisplay.zoom = 0.8
+        this.openSheetMusicDisplay.render()
       },
       (err) => console.err(err)
     )
