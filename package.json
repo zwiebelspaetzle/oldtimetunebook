@@ -6,7 +6,7 @@
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
-    "@fortawesome/react-fontawesome": "^0.0.20",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "opensheetmusicdisplay": "^0.6.6",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
